@@ -1,3 +1,7 @@
+***How to run*** 
+
+
+
 - **Gemfile**, **Gemfile.lock**: Manage project dependencies using Bundler.
 - **Rakefile**: Define custom Rake tasks for your project.
 - **README.md**: Document your project, its structure, and how to get started.

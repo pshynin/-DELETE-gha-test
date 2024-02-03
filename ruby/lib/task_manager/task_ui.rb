@@ -51,6 +51,10 @@ class TaskUI
     @task_manager.add_task(title, due_date, priority, category)
   end
 
+  def view_tasks
+    @task_manager.view_tasks
+  end
+
   # Edits an existing task based on user input.
   def edit_task
     print 'Enter the index of the task to edit: '
