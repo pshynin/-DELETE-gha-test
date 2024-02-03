@@ -1,2 +1,4 @@
 ../.DS_Store
 tasks.txt
+vendor/
+Gemfile.lock

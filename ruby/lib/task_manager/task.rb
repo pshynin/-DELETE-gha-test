@@ -1,6 +1,6 @@
 
 # Represents a task with title, due date, priority, and category.
-class TaskSpec
+class Task
   attr_accessor :title, :due_date, :priority, :category
 
   # Initializes a new TaskSpec instance.

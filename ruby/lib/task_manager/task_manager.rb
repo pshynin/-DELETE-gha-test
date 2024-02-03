@@ -5,7 +5,7 @@ require_relative 'task.rb'
 require_relative 'task_repository.rb'
 
 # Manages the business logic for tasks.
-class TaskManagerSpec
+class TaskManager
 
   # Initializes a new TaskManagerSpec instance.
   def initialize(repository)
@@ -14,7 +14,7 @@ class TaskManagerSpec
 
   # Adds a new task.
   def add_task(title, due_date, priority, category)
-    task = TaskSpec.new(title, due_date, priority, category)
+    task = Task.new(title, due_date, priority, category)
     @repository.add(task)
     puts "TaskSpec added: #{task}"
   end
@@ -39,7 +39,7 @@ end
 require_relative 'task_ui.rb'
 
 # Main program
-repository = TaskRepositorySpec.new
-manager = TaskManagerSpec.new(repository)
+repository = TaskRepository.new
+manager = TaskManager.new(repository)
 ui = TaskUI.new(manager)
 ui.run

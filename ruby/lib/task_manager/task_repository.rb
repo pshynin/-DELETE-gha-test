@@ -1,6 +1,6 @@
 
 # Manages the data access operations for tasks.
-class TaskRepositorySpec
+class TaskRepository
   def initialize(file_path = 'tasks.txt')
     @file_path = file_path
     @tasks = load_tasks
@@ -48,7 +48,7 @@ class TaskRepositorySpec
 
     File.readlines(@file_path).map do |line|
       title, due_date, priority, category = line.chomp.split('|')
-      TaskSpec.new(title, Date.parse(due_date), priority, category)
+      Task.new(title, Date.parse(due_date), priority, category)
     end
   end
 

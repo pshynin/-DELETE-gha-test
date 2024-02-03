@@ -1,0 +1,10 @@
+# Gemfile
+source 'https://rubygems.org'
+
+# Specify the Ruby version
+ruby '>= 2.5.0'
+
+# Include the RSpec testing framework
+group :development, :test do
+  gem 'rspec'
+end

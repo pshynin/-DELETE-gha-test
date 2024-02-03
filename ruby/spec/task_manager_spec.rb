@@ -6,9 +6,9 @@ describe TaskManager do
   let(:manager) { TaskManager.new(repository) }
 
   it 'adds a task through the repository' do
-    task = instance_double(Task)
-    expect(repository).to receive(:add).with(task)
-    manager.add_task(task)
+    task = instance_double(Task, title: 'Sample Task', due_date: Date.today, priority: 'High', category: 'Work')
+    expect(repository).to receive(:add).with('Sample Task', Date.today, 'High', 'Work')
+    manager.add_task(task.title, task.due_date, task.priority, task.category)
   end
 
   it 'views all tasks through the repository' do

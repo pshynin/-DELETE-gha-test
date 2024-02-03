@@ -1,8 +1,12 @@
 ### How to run
-    
-    ruby task_manager.rb
-    
-    rspec
+- Install the gems and its dependencies: `bundle install --path vendor/bundle`
+- Make sure you have the bundle command installed. If not, you can install it using: `gem install bundler`
+- Run the application: `bundle exec ruby lib/task_manager/task_manager.rb`
+
+### How to test
+- Run the tests: `rspec`
+  - Run the tests with coverage: `rspec COVERAGE=true rspec`
+- If you don't have the rspec gem installed, you can install it using: `gem install rspec`
 
 ### Project structure:
 
@@ -15,37 +19,21 @@ ruby/
 ├── README.md
 ├── config/
 │   ├── application.yml       # Shared configuration files
-│   ├── database.yml          # Database configuration
 │   └── environment.rb        # Environment setup
 │
 ├── lib/
-│   ├── my_ruby_project.rb    # Main module file
 │   ├── task_manager/         # Application One
 │   │   └── task_manager.rb   # Application One main file
 │   │
 │   ├── app_two/              # Application Two
-│   │   ├── controllers/
-│   │   │   └── ...
-│   │   ├── models/
-│   │   │   └── ...
-│   │   ├── views/
-│   │   │   └── ...
 │   │   └── app_two.rb        # Application Two main file
 │   │
 │   └── shared/               # Shared code/modules
-│       ├── helpers/
-│       │   └── ...
-│       ├── middleware/
-│       │   └── ...
-│       └── services/
-│           └── ...
+│       └── helpers/
 │
-├── spec/
-│   ├── app_one_spec.rb       # Tests for Application One
-│   ├── app_two_spec.rb       # Tests for Application Two
+├── spec/                     # Unit tests
 │   └── spec_helper.rb        # Shared test setup
 │
-└── tasks/
-    ├── app_one_tasks.rake    # Rake tasks for Application One
-    └── app_two_tasks.rake    # Rake tasks for Application Two
+└── tasks/                   
+    └── tasks.rake            # Custom Rake tasks
 ```
