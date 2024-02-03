@@ -1,18 +1,23 @@
+
+# Manages the data access operations for tasks.
 class TaskRepository
   def initialize(file_path = 'tasks.txt')
     @file_path = file_path
     @tasks = load_tasks
   end
 
+  # Retrieves all tasks from the repository.
   def all
     @tasks
   end
 
+  # Adds a new task to the repository.
   def add(task)
     @tasks << task
     save_tasks
   end
 
+  # Updates an existing task in the repository.
   def update(index, new_title, new_due_date, new_priority, new_category)
     return puts 'Invalid task index.' if index < 1 || index > @tasks.length
 
@@ -26,6 +31,7 @@ class TaskRepository
     puts "Task updated: #{task}"
   end
 
+  # Deletes a task from the repository.
   def delete(index)
     return puts 'Invalid task index.' if index < 1 || index > @tasks.length
 
@@ -36,6 +42,7 @@ class TaskRepository
 
   private
 
+  # Loads tasks from the file.
   def load_tasks
     return [] unless File.exist?(@file_path)
 
@@ -45,6 +52,7 @@ class TaskRepository
     end
   end
 
+  # Saves tasks to the file.
   def save_tasks
     File.open(@file_path, 'w') do |file|
       @tasks.each { |task| file.puts("#{task.title}|#{task.due_date}|#{task.priority}|#{task.category}") }

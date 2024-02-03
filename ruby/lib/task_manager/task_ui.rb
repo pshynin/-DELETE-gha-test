@@ -1,8 +1,11 @@
+
+# Manages the user interface for the task management system.
 class TaskUI
   def initialize(manager)
     @task_manager = manager
   end
 
+  # Runs the main loop of the user interface.
   def run
     loop do
       puts "\nCommand Options:"
@@ -35,6 +38,7 @@ class TaskUI
 
   private
 
+  # Adds a new task based on user input.
   def add_task
     print 'Enter task title: '
     title = gets.chomp
@@ -47,6 +51,7 @@ class TaskUI
     @task_manager.add_task(title, due_date, priority, category)
   end
 
+  # Edits an existing task based on user input.
   def edit_task
     print 'Enter the index of the task to edit: '
     index = gets.chomp.to_i
@@ -61,6 +66,7 @@ class TaskUI
     @task_manager.edit_task(index, new_title, new_due_date, new_priority, new_category)
   end
 
+  # Deletes a task based on user input.
   def delete_task
     print 'Enter the index of the task to delete: '
     index = gets.chomp.to_i
