@@ -1,6 +1,6 @@
 
 # Manages the data access operations for tasks.
-class TaskRepository
+class TaskRepositorySpec
   def initialize(file_path = 'tasks.txt')
     @file_path = file_path
     @tasks = load_tasks
@@ -28,7 +28,7 @@ class TaskRepository
     task.category = new_category if new_category
 
     save_tasks
-    puts "Task updated: #{task}"
+    puts "TaskSpec updated: #{task}"
   end
 
   # Deletes a task from the repository.
@@ -37,7 +37,7 @@ class TaskRepository
 
     task = @tasks.delete_at(index - 1)
     save_tasks
-    puts "Task deleted: #{task}"
+    puts "TaskSpec deleted: #{task}"
   end
 
   private
@@ -48,7 +48,7 @@ class TaskRepository
 
     File.readlines(@file_path).map do |line|
       title, due_date, priority, category = line.chomp.split('|')
-      Task.new(title, Date.parse(due_date), priority, category)
+      TaskSpec.new(title, Date.parse(due_date), priority, category)
     end
   end
 

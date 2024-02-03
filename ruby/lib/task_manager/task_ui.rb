@@ -9,10 +9,10 @@ class TaskUI
   def run
     loop do
       puts "\nCommand Options:"
-      puts "1. Add Task"
+      puts "1. Add TaskSpec"
       puts "2. View Tasks"
-      puts "3. Edit Task"
-      puts "4. Delete Task"
+      puts "3. Edit TaskSpec"
+      puts "4. Delete TaskSpec"
       puts "5. Exit"
 
       print "Enter your choice: "
@@ -28,7 +28,7 @@ class TaskUI
       when 4
         delete_task
       when 5
-        puts 'Exiting the Task Manager. Goodbye!'
+        puts 'Exiting the TaskSpec Manager. Goodbye!'
         break
       else
         puts 'Invalid choice. Please try again.'

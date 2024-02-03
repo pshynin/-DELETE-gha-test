@@ -1,9 +1,9 @@
 
 # Represents a task with title, due date, priority, and category.
-class Task
+class TaskSpec
   attr_accessor :title, :due_date, :priority, :category
 
-  # Initializes a new Task instance.
+  # Initializes a new TaskSpec instance.
   def initialize(title, due_date, priority, category)
     @title = title
     @due_date = due_date
